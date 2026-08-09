@@ -3,7 +3,7 @@
 namespace Src\Cliente\Infrastructure\Requests;
 
 use App\Rules\DocumentoColombiano;
-use App\Rules\TelefonoColombiano;
+use App\Rules\TelefonoEcuatoriano;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
@@ -35,7 +35,7 @@ class StoreClienteRequest extends FormRequest
             'numero_documento' => ['required', 'string', new DocumentoColombiano((string) $this->input('tipo_documento')), Rule::unique('clientes', 'numero_documento')],
             'razon_social' => 'required|string|max:255',
             'direccion' => 'required|string|max:255',
-            'telefono' => ['required', 'string', 'max:13', new TelefonoColombiano],
+            'telefono' => ['required', 'string', 'max:13', new TelefonoEcuatoriano],
             'email' => ['required', 'email:rfc', 'max:254', Rule::unique('clientes', 'email')],
         ];
     }

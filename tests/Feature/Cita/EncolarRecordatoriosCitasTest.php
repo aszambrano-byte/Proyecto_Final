@@ -96,7 +96,7 @@ final class EncolarRecordatoriosCitasTest extends TestCase
                 'numero_documento' => '1000000001',
                 'razon_social' => 'Cliente de recordatorios',
                 'direccion' => 'Dirección de prueba',
-                'telefono' => '3000000001',
+                'telefono' => '0990000001',
             ] : []),
             'email' => 'cliente@example.com',
             'created_at' => $ahora,

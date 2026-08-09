@@ -3,7 +3,7 @@
 namespace Src\Taller\Infrastructure\Requests;
 
 use App\Rules\DocumentoColombiano;
-use App\Rules\TelefonoColombiano;
+use App\Rules\TelefonoEcuatoriano;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 use Src\Auth\Infrastructure\Models\UserEloquentModel;
@@ -39,7 +39,7 @@ class GuardarMecanicoRequest extends FormRequest
             'tipo_documento' => ['required', Rule::in(['CC', 'CE', 'PASAPORTE'])],
             'numero_documento' => ['required', 'string', new DocumentoColombiano((string) $this->input('tipo_documento')), Rule::unique('mecanicos')->ignore($id)],
             'nombres' => ['required', 'string', 'max:120'], 'apellidos' => ['required', 'string', 'max:120'],
-            'telefono' => ['required', 'string', 'max:13', new TelefonoColombiano],
+            'telefono' => ['required', 'string', 'max:13', new TelefonoEcuatoriano],
             'email' => ['required', 'email:rfc', 'max:254', Rule::unique('mecanicos')->ignore($id)],
             'fecha_ingreso' => ['nullable', 'date', 'before_or_equal:today'],
             'especialidad_ids' => ['required', 'array', 'min:1'],

@@ -22,7 +22,7 @@ class PublicClientRegistrationTest extends TestCase
             'numero_documento' => '1020304050',
             'razon_social' => 'Cliente Registrado',
             'direccion' => 'Calle 10 # 20-30',
-            'telefono' => '3001234567',
+            'telefono' => '0991234567',
             'email' => 'cliente.registrado@example.com',
             'password' => 'Cliente2026',
             'password_confirmation' => 'Cliente2026',

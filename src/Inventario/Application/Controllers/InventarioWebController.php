@@ -22,7 +22,7 @@ use Src\Inventario\Infrastructure\Requests\GuardarRepuestoRequest;
 use Src\Inventario\Infrastructure\Requests\RegistrarMovimientoRequest;
 use Src\Inventario\Infrastructure\Requests\UsarRepuestoOrdenRequest;
 use Src\OrdenTrabajo\Infrastructure\Models\OrdenTrabajoEloquentModel;
-use App\Rules\TelefonoColombiano;
+use App\Rules\TelefonoEcuatoriano;
 use Src\Pago\Application\Services\CalculadorTotalOrden;
 use Src\OrdenTrabajo\Application\Services\ValidarPreparacionTrabajo;
 use Src\OrdenTrabajo\Application\Services\AutorizarMecanicoOrden;
@@ -766,7 +766,7 @@ class InventarioWebController extends Controller
                     "nullable",
                     "string",
                     "max:13",
-                    new TelefonoColombiano(),
+                    new TelefonoEcuatoriano(),
                 ],
                 "email" => ["nullable", "email:rfc", "max:254"],
             ],
